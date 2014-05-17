@@ -2,7 +2,9 @@
 
 This is a small helper repository to get you started coding a nice game with Löve2D.
 
-It was originally wrote by [opatut](https://github.com/opatut), and [I](https://github.com/alessandrofac93) rewrote most of this and modernized all.
+It was originally wrote by [opatut](https://github.com/opatut), and me, 
+[alessandrofac93](https://github.com/alessandrofac93) rewrote most of 
+this and modernized all.
 
 ## Requirements
 
