@@ -1,50 +1,20 @@
+require("libs.globals")
+
 require("intro")
-require("util/resources")
-require("util/gamestack")
-
-resources = Resources("data/")
-
-function reset()
-    -- start game
-    intro = Intro()
-    stack = GameStack()
-    stack:push(intro)
-end
+require("game")
 
 function love.load()
     math.randomseed(os.time())
 
-    -- load images
-    -- resources:addImage("logo", "logo.png")
+    Assets.setBaseImageDir('data/images')
+    Assets.setBaseAudioDir('data/audio')
+    Assets.setBaseFontDir('data/fonts')
+    Assets.init() -- initialize the assets loader
 
-    -- load fonts
-    resources:addFont("normal", "DejaVuSans.ttf", 20)
+    local intro = Intro()
 
-    -- load music
-    -- resources:addMusic("background", "background.mp3")
-
-    resources:load()
-
-    reset()
-end
-
-function love.update(dt)
-    stack:update(dt)
-end
-
-function love.draw()
-    stack:draw()
-
-    -- love.graphics.setFont(resources.fonts.tiny)
-    -- love.graphics.print("FPS: " .. love.timer.getFPS(), 5, 5)
-end
-
-function love.keypressed(k, u)
-    stack:keypressed(k, u)
-end
-
-function love.mousepressed( x, y, button )
-    stack:mousepressed(x, y, button)
+    Gamestate.registerEvents()
+    Gamestate.push(intro)
 end
 
 function love.quit()

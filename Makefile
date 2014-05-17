@@ -1,29 +1,27 @@
 default: build run
 
 clean:
-	@[[ ! -e game.love ]] || rm game.love
-	@[[ ! -e pkg ]] || rm -r pkg
+	@if [ -e build ]; then rm -r build; fi
 
 build:
-	@zip -r game.love data/
-	@cd src/ && zip -r ../game.love *
+	@lib/helper.sh dotlove
 
-run:
-	@love game.love
+run: build
+	@lib/helper.sh run
 
 # packaging
 
-package-windows-x86:
-	@lib/package.sh windows_x86
+package-windows-x86: build
+	@lib/helper.sh windows_x86
 
-package-windows-x64:
-	@lib/package.sh windows_x64
+package-windows-x64: build
+	@lib/helper.sh windows_x64
 
-package-linux-x86:
-	@lib/package.sh linux_x86
+package-linux-x86: build
+	@lib/helper.sh linux_x86
 
-package-linux-x64:
-	@lib/package.sh linux_x64
+package-linux-x64: build
+	@lib/helper.sh linux_x64
 
 package-windows: package-windows-x86 package-windows-x64
 package-linux: package-linux-x86 package-linux-x64

@@ -2,6 +2,8 @@
 
 This is a small helper repository to get you started coding a nice game with Löve2D.
 
+It was originally wrote by [opatut](https://github.com/opatut), and [I](https://github.com/alessandrofac93) rewrote most of this and modernized all.
+
 ## Requirements
 
 * Makefile and Bash scripts are not good for Windows, don't you try to feed them to the nasty Microsoft stuff. For Linux only!
@@ -21,67 +23,40 @@ Just type ```make``` to perform the **build** and **run** targets.
 
 ## Development
 
-Put your data in the ```data/``` folder, and your sources into ```src/```. Make sure to adjust ```src/config.lua```. Add resources to the resource manager in ```src/main.lua```. You can access them via
+Put your data in the ```data/``` folder, and your sources into ```src/```. Make sure to adjust ```src/config.lua```.
 
-    resources.images.<image-name>
-    resources.fonts.<font-name>
-    etc...
+This project uses stable and powerful libraries. The documentation for 
+them:
 
-from everywhere in your code.
+* [HUMP](http://vrld.github.io/hump/) (game engine and other utilities)
+* [LCS](https://github.com/Yonaba/Lua-Class-System) (object-oriented programming)
+* [love2d-assets-loader](http://yonaba.github.io/love2d-assets-loader/)
 
-### Class Helper
-
-The class helper can be used like this:
-
-    require("util/helper")
-
-    ClassName = class("ClassName")
-
-    function ClassName:__init(constructor, arguments)
-        self.foo = "bar"
-    end
-
-    function ClassName:customMethod(parameter)
-        -- do stuff
-    end
-
-Inheritance works like this:
-
-    require("util/helper")
-
-    SecondClass = class("SecondClass", ClassName)
-
-    -- overwriting a method
-    function SecondClass:customMethod(parameter_x)
-        -- do other stuff
-    end
-
-### Game States
-
-To create a new game state, inherit it from the GameState class (util/gamestate). Then create it in the reset() function in the ```src/main.lua```. To switch to a state, call stack:push(the_state) somewhere in your code. To close a state, run stack:pop(). See the intro state in ```src/intro.lua``` for an example.
 
 ## License
 
-This program is free software. It comes without any warranty, to the extent permitted by applicable law. You can redistribute it and/or modify it under the terms of the Do What The Fuck You Want To Public License, Version 2, as published by Sam Hocevar. See http://sam.zoy.org/wtfpl/COPYING for more details.
+The zlib/libpng License
 
-             DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE 
-                       Version 2, December 2004 
+* Copyright (c) 2013 Paul Bienkowski <opatutlol@aol.com>
+* Copyright (c) 2014 Alessandro Facciorusso <alessandrofac93@gmail.com>
 
-    Copyright (C) 2004 Sam Hocevar <sam@hocevar.net> 
+This software is provided 'as-is', without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.
 
-    Everyone is permitted to copy and distribute verbatim or modified 
-    copies of this license document, and changing it is allowed as long 
-    as the name is changed. 
+Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions:
 
-               DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE 
-      TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION 
+1. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
 
-     0. You just DO WHAT THE FUCK YOU WANT TO. 
+2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
+
+3. This notice may not be removed or altered from any source distribution.
+
 
 The following files and directories are not part of this project and were redistributed under their respective licenses:
 
-* data/DejaVuSans.ttf [LICENSE](http://dejavu-fonts.org/wiki/License)
-* lib/linux_x86 (license file included)
-* lib/linux_x64 (license file included)
-* lib/windows_x86 (license file included)
-* lib/windows_x64 (license file included)
+* data/DejaVuSans.ttf ([license here](http://dejavu-fonts.org/wiki/License))
+* lib/linux_x64|x86 (Löve2D versions for Linux, license files included)
+* lib/windows_x64|x86 (Löve2D versions for Windows, license files included)
+* src/libs/hump (license included)
+* src/libs/lcs (license included)
+* src/libs/assets.lua ([MIT license](http://www.opensource.org/licenses/mit-license.php))
+
