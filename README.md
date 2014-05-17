@@ -30,7 +30,7 @@ them:
 
 * [HUMP](http://vrld.github.io/hump/) (game engine and other utilities)
 * [LCS](https://github.com/Yonaba/Lua-Class-System) (object-oriented programming)
-* [love2d-assets-loader](http://yonaba.github.io/love2d-assets-loader/)
+* [love2d-assets-loader](http://yonaba.github.io/love2d-assets-loader/) (resources loading)
 
 
 ## License
