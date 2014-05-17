@@ -1,7 +1,6 @@
 require("libs.globals")
 
 require("intro")
-require("game")
 
 function love.load()
     math.randomseed(os.time())
@@ -14,7 +13,7 @@ function love.load()
     local intro = Intro()
 
     Gamestate.registerEvents()
-    Gamestate.push(intro)
+    Gamestate.switch(intro)
 end
 
 function love.quit()

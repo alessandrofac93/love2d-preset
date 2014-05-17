@@ -3,7 +3,7 @@ default: build run
 clean:
 	@if [ -e build ]; then rm -r build; fi
 
-build:
+build: clean
 	@lib/helper.sh dotlove
 
 run: build

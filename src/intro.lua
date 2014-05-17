@@ -8,10 +8,5 @@ function Intro:draw()
 
     love.graphics.clear()
     love.graphics.setFont(Assets.extFont.DejaVuSans())
-    love.graphics.print("Press Escape to skip intro", 10, 10)
-end
-
-function Intro:keypressed(k, u)
-    game = Game()
-    Gamestate:switch(game)
+    love.graphics.print("Intro.", 10, 10)
 end

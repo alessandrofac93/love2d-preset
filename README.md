@@ -2,7 +2,7 @@
 
 This is a small helper repository to get you started coding a nice game with Löve2D.
 
-It was originally wrote by [opatut](https://github.com/opatut). [I](https://github.com/alessandrofac93) rewrote most of this and modernized all.
+Originally wrote by [Paul Bienkowski (opatut)](https://github.com/opatut) and rewritten and modernized by [Alessandro Facciorusso](https://github.com/alessandrofac93).
 
 ## Requirements
 
@@ -14,9 +14,9 @@ It was originally wrote by [opatut](https://github.com/opatut). [I](https://gith
 The following make targets are available:
 
     clean:              clears all generated data
-    build:              packages the data and sources into ```game.love```
-    run:                runs ```love game.love``` for you
-    package-all:        creates all binary packages into ```pkg/```
+    build:              packages the data and sources into game.love
+    run:                runs love game.love for you
+    package-all:        creates all binary packages into build/
     package-<platform>: generates binary package for one of the supported platforms
 
 Just type ```make``` to perform the **build** and **run** targets.
